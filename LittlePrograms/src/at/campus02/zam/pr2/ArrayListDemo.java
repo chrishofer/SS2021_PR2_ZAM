@@ -1,10 +1,19 @@
 package at.campus02.zam.pr2;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 public class ArrayListDemo {
+
+    /*private List<Bunny> bunnyGarden;
+
+    public ArrayListDemo(){
+        bunnyGarden = new ArrayList<>();
+    }*/
+
     public static void main(String[] args) {
         ArrayList<String> namesForLuckyDraw = new ArrayList<String>(50);
         // for a double arraylist i have to write ArrayList<Double>

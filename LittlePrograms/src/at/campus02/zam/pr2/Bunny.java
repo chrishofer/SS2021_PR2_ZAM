@@ -1,9 +1,25 @@
 package at.campus02.zam.pr2;
 
+import java.util.Objects;
+
 public class Bunny {
     private String name;
     private String favoriteFood;
     private int bID;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bunny bunny = (Bunny) o;
+        return bID == bunny.bID && Objects.equals(name, bunny.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, bID);
+    }
+
     private static int bunnyID = 1000;
     private Season birthSeason;
 
