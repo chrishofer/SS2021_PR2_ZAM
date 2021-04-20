@@ -17,5 +17,9 @@ public class SocialNetworkApp {
         LocalDateTime localDateTime = LocalDateTime.now();
         MayBe<LocalDateTime> time = new MayBe<LocalDateTime>(localDateTime, 1);
         System.out.println(time.print());
+
+        // does not work MayBe<int>
+        // but wrapper class does
+        // MayBe<Integer> ...
     }
 }
