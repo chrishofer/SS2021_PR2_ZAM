@@ -2,12 +2,14 @@ package at.campus02.zam.pr2;
 
 import java.util.ArrayList;
 
-public class Customer {
+public class Customer extends Person {
     private int customerNumber;
     private ArrayList<Address> addresses;
 
-    public Customer(int nr)
+    public Customer(int nr, String fName, String lName)
     {
+        super(fName, lName);
+        //super("Hansi", "Hinterseer"); // schlechte Lösung
         customerNumber = nr;
         addresses = new ArrayList<Address>();
     }
@@ -20,6 +22,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return  customerNumber + "\n" + addresses;
+        return  customerNumber + " " + firstName + " " + lastName + "\n" + addresses;
     }
 }

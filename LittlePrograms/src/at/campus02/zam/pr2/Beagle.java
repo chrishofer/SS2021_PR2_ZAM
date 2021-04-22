@@ -7,6 +7,9 @@ public class Beagle extends Dog{
         lovedFood = lF;
     }
 
+    public void jump(int height){
+        System.out.println("Beagle jumps " + height + " cm high");
+    }
     @Override
     public String toString() {
         return "Beagle{" +
