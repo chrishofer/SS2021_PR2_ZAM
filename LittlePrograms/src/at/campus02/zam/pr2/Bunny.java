@@ -2,10 +2,14 @@ package at.campus02.zam.pr2;
 
 import java.util.Objects;
 
+
+
 public class Bunny {
     private String name;
     private String favoriteFood;
     private int bID;
+    private static int bunnyID = 1000;
+    private Season birthSeason;
 
     @Override
     public boolean equals(Object o) {
@@ -20,8 +24,7 @@ public class Bunny {
         return Objects.hash(name, bID);
     }
 
-    private static int bunnyID = 1000;
-    private Season birthSeason;
+
 
     // if we write at least one constructor
     // the default constructor no longer exists
