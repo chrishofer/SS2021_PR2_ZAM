@@ -15,5 +15,12 @@ public class DogApp {
         b.weight = 12;
         b.bark();
         System.out.println(b);
+
+        // test a beagle as dog
+
+        d = b; // upcasting
+        // d.j... does not know jump d.j
+        // the correct overwritten method is called
+        System.out.println(d);
     }
 }
