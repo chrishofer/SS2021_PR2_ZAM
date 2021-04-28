@@ -19,7 +19,15 @@ public class RentedFlat extends Flat {
     // category 3 we pay 1.5 times monthly rent
     @Override
     public double upfrontCost() {
-        return super.upfrontCost();
+        switch(flatCategory){
+            case 1:
+                return 3 * monthlyCost();
+            case 2:
+                return 2 * monthlyCost();
+            case 3:
+                return 1.5 * monthlyCost();
+        }
+        return 0;
     }
 
     // category1: m2 * 18 ; for kitchen extra 70
@@ -27,6 +35,27 @@ public class RentedFlat extends Flat {
     // category3: m2 * 7; for kitchen extra 15
     @Override
     public double monthlyCost() {
-        return super.monthlyCost();
+        double c = 0;
+        switch(flatCategory){
+            case 1:
+                c = sizeInM2 * 18;
+                if(kitchenIncluded){
+                    c += 70;
+                }
+                break;
+            case 2:
+                c = sizeInM2 * 10;
+                if(kitchenIncluded){
+                    c += 40;
+                }
+                break;
+            case 3:
+                c = sizeInM2 * 7;
+                if(kitchenIncluded){
+                    c += 15;
+                }
+                break;
+        }
+        return c;
     }
 }

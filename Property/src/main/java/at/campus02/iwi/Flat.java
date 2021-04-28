@@ -19,7 +19,32 @@ public class Flat extends Property{
     // in category 2 and 3 it just adds 5000
     @Override
     public double upfrontCost() {
-        return 0;
+        // as an example an implementation with ifs
+
+        double c = 0;
+        if(flatCategory == 1)
+        {
+            c = 3000 * sizeInM2 ;
+            if(furnished){
+                c += 300 * sizeInM2;
+            }
+        }else{
+            if(flatCategory == 2){
+                c = 2700 * sizeInM2;
+                if(furnished){
+                    c += 5000;
+                }
+            }else{
+                if(flatCategory == 3){
+                    c = 1800 * sizeInM2;
+                    if(furnished){
+                        c += 5000;
+                    }
+                }
+            }
+        }
+
+        return c;
     }
 
     // category 1 is m2 * 2 / 3
@@ -27,6 +52,14 @@ public class Flat extends Property{
     // category 3 is m2 * 3.2
     @Override
     public double monthlyCost() {
+        switch(flatCategory){
+            case 1:
+                return sizeInM2 * 2 / 3;
+            case 2:
+                return sizeInM2 * 1.5;
+            case 3:
+                return sizeInM2 * 3.2;
+        }
         return 0;
     }
 }

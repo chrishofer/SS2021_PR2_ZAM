@@ -16,7 +16,16 @@ public class House extends Property {
     // for older houses price is 3000
     @Override
     public double upfrontCost() {
-        return 0;
+        double c = 0;
+        if(yearBuilt > 2010){
+            return 4000 * sizeInM2;
+        }
+        if(yearBuilt >= 1950 && yearBuilt <= 2010)
+        {
+            return 2000 * sizeInM2;
+        }
+        // older houses
+        return 3000 * sizeInM2;
     }
 
     // for houses after 2015 cost is m2 / 2
@@ -24,6 +33,15 @@ public class House extends Property {
     // houses before 1990 m2 * 5
     @Override
     public double monthlyCost() {
-        return 0;
+        double c = 0;
+        if(yearBuilt > 2015){
+            return sizeInM2 / 2.0;
+        }
+        if(yearBuilt >= 1990 && yearBuilt <= 2015)
+        {
+            return sizeInM2 * 2.5;
+        }
+        // older houses
+        return 5 * sizeInM2;
     }
 }
