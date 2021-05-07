@@ -1,6 +1,9 @@
 package at.campus02.zam.pr2;
 
-public class Holiday {
+
+
+
+public class Holiday implements Comparable<Holiday> {
     private String destination;
     private int lengthInDays;
     private int nrPersons;
@@ -51,5 +54,22 @@ public class Holiday {
                 ", lengthInDays=" + lengthInDays +
                 ", nrPersons=" + nrPersons +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Holiday o) {
+        if(this.lengthInDays < o.lengthInDays){
+            return -1;
+        }
+        if(this.lengthInDays > o.lengthInDays){
+            return 1;
+        }
+        if(this.nrPersons < o.nrPersons){
+            return -1;
+        }
+        if(this.nrPersons > o.nrPersons){
+            return 1;
+        }
+        return 0;
     }
 }
