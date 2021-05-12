@@ -27,6 +27,9 @@ public class Dog implements Comparable<Dog> {
     // we want to sort them by weight
     @Override
     public int compareTo(Dog o) {
+
+        // ((Integer)this.weight).compareTo()
+        //Integer.compare(this.weight, o.weight);
         if(this.weight < o.weight){
             return -1;
         }

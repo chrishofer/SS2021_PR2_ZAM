@@ -48,6 +48,9 @@ public class ArraySort {
         Collections.sort(holidays, new HolidayCountryComparator());
         System.out.println(holidays);
 
+        Collections.sort(holidays, new HolidayLengthComparator());
+        System.out.println(holidays);
+
 
         //Arrays.sort
 
